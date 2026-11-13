@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khyma.example/sitemap.xml
+Sitemap: https://khyma-bar.vercel.app/sitemap.xml
