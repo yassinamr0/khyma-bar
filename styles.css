@@ -156,8 +156,8 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
 @keyframes twinkle { from { transform: rotate(-9deg) scale(.96); } to { transform: rotate(11deg) scale(1.06); } }
 .strip { margin-top: clamp(48px, 7vw, 110px); overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; padding: 28px var(--m); }
 .strip::-webkit-scrollbar { display: none; }
-/* with a mouse the strip is not a scroller: the page scroll carries the pictures across instead */
-@media (hover: hover) and (pointer: fine) { .strip { overflow: clip; scroll-snap-type: none; } }
+/* Page scrolling carries the pictures across on touch screens and desktops alike. */
+@media (prefers-reduced-motion: no-preference) { .js .strip { overflow: clip; scroll-snap-type: none; } }
 .strip-in { display: flex; gap: clamp(16px, 2.4vw, 36px); width: max-content; align-items: center; transform: translate3d(var(--x, 0px), 0, 0); }
 .strip .pic { width: clamp(220px, 24vw, 330px); height: auto; aspect-ratio: 4 / 5; scroll-snap-align: center; }
 .strip .pic:nth-child(odd) { rotate: -3deg; } .strip .pic:nth-child(even) { rotate: 2.5deg; translate: 0 22px; }
