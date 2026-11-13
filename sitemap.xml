@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://khyma.example/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://khyma.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khyma.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khyma.example/"/>
+  </url>
+  <url>
+    <loc>https://khyma.example/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://khyma.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khyma.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khyma.example/"/>
+  </url>
+</urlset>
