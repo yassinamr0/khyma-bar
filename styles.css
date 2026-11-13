@@ -216,3 +216,24 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
   .par { transform: none; }
   .js :is(.rv, .scene h2, .sheet, .proof .big, .proof .lead, .f-desc, .chips, .visit .actions, .strip .pic, .wordmark, .foot-row) { opacity: 1; transform: none; }
 }
+
+/* Keep touch scrolling light: animate only the photo track, while visible. */
+@media (max-width: 900px), (hover: none), (pointer: coarse) {
+  .par { transform: none; will-change: auto; }
+  .dr, .star { animation: none; }
+  .pic-a, .pic-b { animation: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @media (max-width: 900px), (hover: none), (pointer: coarse) {
+    .js .strip-in {
+      animation: strip-glide 24s ease-in-out infinite alternate;
+      animation-play-state: paused;
+    }
+    .js .strip.is-visible .strip-in { animation-play-state: running; }
+    .js .strip:focus-within .strip-in { animation-play-state: paused; }
+  }
+}
+@keyframes strip-glide {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--strip-end, 0px), 0, 0); }
+}

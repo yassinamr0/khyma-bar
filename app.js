@@ -35,30 +35,51 @@
     paint(false);
   }
 
-  /* ---------- scroll: the mural's waves slide at different depths, the photo strip drifts sideways ---------- */
+  /* Desktop parallax; phones use a compositor animation without scroll work. */
   const murals = $$('.mural'), stripIn = $('#stripIn'), strip = $('#strip');
-  let ticking = false;
+  const desktop = matchMedia('(min-width: 901px) and (hover: hover) and (pointer: fine)');
+  let ticking = false, travel = 0;
+  function measureStrip() {
+    const style = getComputedStyle(strip);
+    const pad = parseFloat(style.paddingInlineStart) + parseFloat(style.paddingInlineEnd);
+    travel = Math.max(0, stripIn.scrollWidth + pad - strip.clientWidth);
+    stripIn.style.setProperty('--strip-end', (travel * (root.dir === 'rtl' ? 1 : -1)) + 'px');
+  }
   function onScroll() {
     ticking = false;
     const vh = innerHeight;
-    murals.forEach(m => {
-      const r = m.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) return;
-      m.style.setProperty('--p', Math.max(-1.2, Math.min(1.2, (r.top + r.height / 2 - vh / 2) / vh)).toFixed(3));
-    });
+    // Read geometry together before updating styles to avoid forced layout per mural.
+    const rects = murals.map(m => m.getBoundingClientRect());
     const s = strip.getBoundingClientRect();
+    rects.forEach((r, i) => {
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      murals[i].style.setProperty('--p', Math.max(-1.2, Math.min(1.2, (r.top + r.height / 2 - vh / 2) / vh)).toFixed(3));
+    });
     if (s.bottom > 0 && s.top < vh) {
-      // 0 as the strip enters at the bottom of the screen, 1 as it leaves at the top: by then every picture has passed
       const k = Math.max(0, Math.min(1, (vh - s.top) / (vh + s.height)));
-      const pad = parseFloat(getComputedStyle(strip).paddingInlineStart) * 2;
-      const travel = Math.max(0, stripIn.scrollWidth + pad - strip.clientWidth);
       stripIn.style.setProperty('--x', (k * travel * (root.dir === 'rtl' ? 1 : -1)).toFixed(1) + 'px');
     }
   }
-  if (!reduce) {
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-    addEventListener('resize', onScroll); onScroll();
+  function queueScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }
+  function configureMotion() {
+    removeEventListener('scroll', queueScroll);
+    measureStrip();
+    if (!reduce && desktop.matches) {
+      addEventListener('scroll', queueScroll, { passive: true });
+      onScroll();
+    }
+  }
+  desktop.addEventListener('change', configureMotion);
+  addEventListener('resize', configureMotion);
+  if ('ResizeObserver' in window) new ResizeObserver(measureStrip).observe(stripIn);
+  if ('IntersectionObserver' in window) {
+    const stripObserver = new IntersectionObserver(entries => {
+      strip.classList.toggle('is-visible', entries[0].isIntersecting);
+    });
+    stripObserver.observe(strip);
+  } else strip.classList.add('is-visible');
 
   /* ---------- entrances ---------- */
   $$('.steps li, .cols .col, .facts > div, .strip .pic').forEach(el => el.style.setProperty('--i', [...el.parentElement.children].indexOf(el)));
@@ -69,4 +90,5 @@
   } else targets.forEach(el => el.classList.add('in'));
 
   applyLang();
+  configureMotion();
 })();
