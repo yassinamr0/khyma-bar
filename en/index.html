@@ -75,7 +75,7 @@
     <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <span data-i18n="hero.rating">4.8 from 1,192 Google reviews</span></p>
   </div>
   <div class="hero-pics">
-    <img class="pic pic-a" src="../assets/cups.jpg" width="512" height="640" alt="Six colourful Khyma cups: iced tea, hibiscus, coffee, matcha, iced chocolate and Spanish latte" data-i18n-attr="alt:alt.cups">
+    <img class="pic pic-a" fetchpriority="high" decoding="async" src="../assets/cups.jpg" width="512" height="640" alt="Six colourful Khyma cups: iced tea, hibiscus, coffee, matcha, iced chocolate and Spanish latte" data-i18n-attr="alt:alt.cups">
     <img class="pic pic-b" src="../assets/pour.jpg" width="360" height="640" alt="Coffee pouring over ice into a Khyma cup under the PUSH tap" data-i18n-attr="alt:alt.pour">
   </div>
 </section>
@@ -176,15 +176,109 @@
       <p class="lead" data-i18n="seen.p">4.8 out of 5 on Google, from 1,192 reviews. Come and see why.</p>
     </div>
   </div>
-  <div class="strip" id="strip" tabindex="0" role="group" aria-label="Pictures from Khyma" data-i18n-attr="aria-label:seen.strip">
-    <div class="strip-in" id="stripIn">
-      <img class="pic" src="../assets/dessert-car.jpg" width="512" height="640" alt="A spoonful of Khymah Signature with chocolate and pecans" data-i18n-attr="alt:alt.sig" loading="lazy">
-      <img class="pic" src="../assets/trunk.jpg" width="512" height="640" alt="A car boot packed with Khymah Signature tubs" data-i18n-attr="alt:alt.trunk" loading="lazy">
-      <img class="pic" src="../assets/dessert-hoodie.jpg" width="512" height="640" alt="A Khymah Signature tub held in hand" data-i18n-attr="alt:alt.hoodie" loading="lazy">
-      <img class="pic" src="../assets/tub.jpg" width="512" height="640" alt="A Khymah Signature tub" data-i18n-attr="alt:alt.tub" loading="lazy">
-      <img class="pic" src="../assets/guest.jpg" width="512" height="640" alt="A guest working at a table with a Khyma dessert" data-i18n-attr="alt:alt.guest" loading="lazy">
-      <img class="pic" src="../assets/shop.jpg" width="360" height="640" alt="The hot drinks corner inside Khyma Bar" data-i18n-attr="alt:alt.shop" loading="lazy">
+  <div class="reviews-head">
+    <div><h3 id="reviews-heading">Good cups. Good company.</h3>
+    <p id="reviews-help">A few words from the people who’ve been here.</p></div>
+    <div class="review-controls" hidden>
+      <button type="button" data-review-step="-1" aria-controls="review-list" aria-label="Previous review"><span aria-hidden="true">←</span></button>
+      <button type="button" data-review-step="1" aria-controls="review-list" aria-label="Next review"><span aria-hidden="true">→</span></button>
     </div>
+  </div>
+  <div class="reviews" tabindex="0" role="region" aria-labelledby="reviews-heading" aria-describedby="reviews-help">
+    <ul class="review-list" id="review-list">
+      <li class="review-card">
+        <article aria-labelledby="reviewer-0">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLcr5gsyWsIA4XNOzNugn-kBwbTmD8SHLkocH4voQfHOfl6aQ9Yoxoct9lgTXpb8gS7M4oS41PAZ2ulHIjQzL8KV3_v6igbUo42A5kL25xYetBBu-bFzpvaae0cA8_UGsogQOcP8jAIX1AGS=w800" aria-label="View photo by عبدالوهاب محمد">
+              <img src="../assets/reviews/hibiscus-chess-640.webp" srcset="../assets/reviews/hibiscus-chess-320.webp 320w, ../assets/reviews/hibiscus-chess-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 62%" alt="A Khyma hibiscus drink on a chessboard" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">Photo: </span><bdi>عبدالوهاب محمد</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">Translated excerpt</p><blockquote lang="en" dir="ltr">The hibiscus is good but could be a little stronger. The matcha is delicious, and so is the peach coffee.</blockquote></div>
+            <h3 id="reviewer-0"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%A7%D9%84%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87%20%D8%AC%D9%8A%D8%AF"><bdi>عبدالوهاب محمد</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>Full review & photo credit</summary>
+              <blockquote lang="ar" dir="rtl">المكان جميل خدمه حلوه الموظف مبتسم الكركديه جيد بس يبغا له يكون شوي ثقيل الماتشا لذيذه القهوه بالخوخ لذيده شكرا على المكان الحلو</blockquote>
+              <p>Photo by <a href="https://www.google.com/maps/contrib/102477895996414169970/reviews?hl=ar"><bdi>عبدالوهاب محمد</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%A7%D9%84%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87%20%D8%AC%D9%8A%D8%AF">Read on Google</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-1">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLeJdT8L6emMrTxXjZU4XY-Y2WXpGMnCGNQmiptyFhLPct5AwQJui5dqzvFfl5CAE1KChKvPfyHqin6AbL8PcxIYPSIzb71adyFgJGl3Er9bUZXHqggsSTZPhpBYvUaPl-E6wM5y=w800" aria-label="View photo by Kayan">
+              <img src="../assets/reviews/fresh-matcha-640.webp" srcset="../assets/reviews/fresh-matcha-320.webp 320w, ../assets/reviews/fresh-matcha-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 72%" alt="An iced matcha in a Khyma cup at the matcha tap" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">Photo: </span><bdi>Kayan</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">Translated excerpt</p><blockquote lang="en" dir="ltr">The café is lovely and the concept is great. I tried lots of things and found it hard to choose. The matcha has just the right sweetness.</blockquote></div>
+            <h3 id="reviewer-1"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%85%D9%88%D9%88%D9%88%D8%B2%D9%88%D9%86%D9%87"><bdi>Kayan</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>Full review & photo credit</summary>
+              <blockquote lang="ar" dir="rtl">الكوفي جميل وفكرته حلوه ماشاءالله
+جربت اشياء كثير عندهم و احترت بالطلب
+الماتشا موووزونه حلاها
+و الموظفه ليان اخلاقها عسل 💓</blockquote>
+              <p>Photo by <a href="https://www.google.com/maps/contrib/106170640591829200181/reviews?hl=ar"><bdi>Kayan</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%85%D9%88%D9%88%D9%88%D8%B2%D9%88%D9%86%D9%87">Read on Google</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-2">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLdP7ncYwgb_Mwf7GggMOLOyjiEi7fNJaovJRqqCwTkBCqdkJFipqPRt0qv1gks0mCEXTaM62Y43qHHsikhK4cpw9sTxaCvmPhl-30UtAExlfWEmaCx7mgvR-BP73ROjxgAbEp6-=w800" aria-label="View photo by حسن الخنبشي">
+              <img src="../assets/reviews/coffee-window-640.webp" srcset="../assets/reviews/coffee-window-320.webp 320w, ../assets/reviews/coffee-window-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 95%" alt="Iced coffee in a Khyma cup beside the café window" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">Photo: </span><bdi>حسن الخنبشي</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">Translated excerpt</p><blockquote lang="en" dir="ltr">A lovely, relaxed café. The Ethiopian coffee of the day is excellent. Excellent Spanish latte and matcha.</blockquote></div>
+            <h3 id="reviewer-2"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%82%D9%87%D9%88%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D8%A3%D8%AB%D9%8A%D9%88%D8%A8%D9%8A"><bdi>حسن الخنبشي</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>Full review & photo credit</summary>
+              <blockquote lang="ar" dir="rtl">الكفي جميل ورايق
+قهوة اليوم الأثيوبي ممتازة
+اسبنش لاتيه ممتاز
+الماتشا ممتازة
+شكراً لغلا بشوشة ومحترمه الله يوفقها يارب
+ويبارك لكم في مالكم وحلالكم
+
+ما اقول تتكرر الزيارة سرت عميل يومي عندكم ♥️</blockquote>
+              <p>Photo by <a href="https://www.google.com/maps/contrib/103667330890368123505/reviews?hl=ar"><bdi>حسن الخنبشي</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%82%D9%87%D9%88%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D8%A3%D8%AB%D9%8A%D9%88%D8%A8%D9%8A">Read on Google</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-3">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLdrhm6ujHB1UExIgBmxXi1hqrEgAkJO5QORRhRAOLPmB6aINOBO6clKl6j8Gk-6aiVoRzaWQzdaTteWTXP4o3dEdw08lXsXGWjQv4Y-zWqFSKlg824zrzD0QyxKEW9kW_TyH7fwx88e9aU=w800" aria-label="View photo by Abaa Sheboun">
+              <img src="../assets/reviews/cup-in-hand-640.webp" srcset="../assets/reviews/cup-in-hand-320.webp 320w, ../assets/reviews/cup-in-hand-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 52%" alt="A guest holding a colourful Khyma cup inside the café" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">Photo: </span><bdi>Abaa Sheboun</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">Translated excerpt</p><blockquote lang="en" dir="ltr">A wonderful experience and a very lovely place. The employee was very kind. I recommend it.</blockquote></div>
+            <h3 id="reviewer-3"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D8%B1%D8%A7%D8%A6%D8%B9%D8%A9"><bdi>Abaa Sheboun</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>Full review & photo credit</summary>
+              <blockquote lang="ar" dir="rtl">تجربة رائعة و المكان جداً جميل
+الموظف كان لطيف جداً
+انصح فيه</blockquote>
+              <p>Photo by <a href="https://www.google.com/maps/contrib/109190642419817107216/reviews?hl=ar"><bdi>Abaa Sheboun</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D8%B1%D8%A7%D8%A6%D8%B9%D8%A9">Read on Google</a>
+            </details>
+          </div>
+        </article>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -229,7 +323,6 @@
         <a href="#visit" data-i18n="nav.visit">Visit</a>
         <a href="https://www.instagram.com/khyma.ksa/" rel="noopener" dir="ltr">@khyma.ksa</a>
       </nav>
-      <p class="foot-credit" data-i18n="foot.credit">Photographs from Khyma Bar’s Instagram account.</p>
     </div>
   </div>
 </footer>

@@ -46,7 +46,6 @@ window.KHYMA = (() => {
     'visit.dir': ['الاتجاهات على قوقل', 'Directions on Google'], 'visit.ig': ['انستقرام', 'Instagram'],
     'foot.fr': ['الامتياز مفتوح.', 'Franchising is open.'],
     'foot.frp': ['تبي خيمة بار في مدينتك؟ كلّمنا على الجوال أو راسلنا على انستقرام.', 'Want a Khyma Bar in your city? Call us or message us on Instagram.'],
-    'foot.credit': ['الصور من حساب خيمة بار على انستقرام.', 'Photographs from Khyma Bar’s Instagram account.'],
   };
 
   /* flavours: each one repaints the mural (a = ground, b c d = waves, i = text) */

@@ -43,7 +43,7 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
 .mural { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
 .mural svg { width: 100%; height: 100%; }
 .mural use { transition: fill .9s var(--ease); }
-.par { transform: translate3d(0, calc(var(--p, 0) * var(--s, 60) * 1px), 0); will-change: transform; }
+.par { transform: translate3d(0, calc(var(--p, 0) * var(--s, 60) * 1px), 0); will-change: auto; }
 .dr { transform-box: fill-box; transform-origin: 50% 50%; animation: drift var(--t, 26s) ease-in-out infinite alternate; }
 @keyframes drift { from { transform: translate(-22px, 12px) rotate(-2deg) scale(1); } to { transform: translate(26px, -16px) rotate(2.5deg) scale(1.05); } }
 .edge { position: absolute; z-index: 1; inset-inline: 0; top: -99px; width: 100%; height: 100px; max-width: none; }
@@ -154,14 +154,61 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
 [dir="rtl"] .big { justify-content: flex-end; }
 .star { flex: none; width: .44em; height: .44em; max-width: none; fill: currentColor; stroke: currentColor; stroke-width: 2.4; stroke-linejoin: round; animation: twinkle 4.5s ease-in-out infinite alternate; }
 @keyframes twinkle { from { transform: rotate(-9deg) scale(.96); } to { transform: rotate(11deg) scale(1.06); } }
-.strip { margin-top: clamp(48px, 7vw, 110px); overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; padding: 28px var(--m); }
-.strip::-webkit-scrollbar { display: none; }
-/* Page scrolling carries the pictures across on touch screens and desktops alike. */
-@media (prefers-reduced-motion: no-preference) { .js .strip { overflow: clip; scroll-snap-type: none; } }
-.strip-in { display: flex; gap: clamp(16px, 2.4vw, 36px); width: max-content; align-items: center; transform: translate3d(var(--x, 0px), 0, 0); }
-.strip .pic { width: clamp(220px, 24vw, 330px); height: auto; aspect-ratio: 4 / 5; scroll-snap-align: center; }
-.strip .pic:nth-child(odd) { rotate: -3deg; } .strip .pic:nth-child(even) { rotate: 2.5deg; translate: 0 22px; }
-.strip .pic:hover { transform: scale(1.05) rotate(2deg); }
+/* Guest photographs paired with their own review, like notes from the café. */
+.reviews-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-inline: var(--m); margin-top: clamp(40px, 5vw, 72px); }
+.reviews-head h3 { font-family: var(--display); font-size: clamp(1.75rem, 3vw, 3rem); line-height: 1.2; }
+.reviews-head p { margin-top: 12px; max-width: 42ch; font-size: 1rem; }
+.review-controls { display: flex; gap: 10px; flex: none; }
+.review-controls[hidden] { display: none; }
+.review-controls button { width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--paper); color: var(--ink); font: 1.5rem/1 var(--text); cursor: pointer; }
+.review-controls button:hover { background: var(--sun); }
+.reviews { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: var(--m); padding: 28px var(--m) 20px; scrollbar-width: thin; scrollbar-color: var(--ink) transparent; }
+.review-list { display: flex; align-items: flex-start; gap: 24px; }
+.review-card { --review-paper: #F9E0C7; flex: 0 0 min(360px, 86vw); min-width: 0; scroll-snap-align: start; background: var(--review-paper); color: var(--ink); border-radius: 24px; }
+.review-card:nth-child(2) { --review-paper: #E1EACB; }
+.review-card:nth-child(3) { --review-paper: #D9EAF1; }
+.review-card:nth-child(4) { --review-paper: #E8DEF4; }
+.review-card article { display: flex; flex-direction: column; }
+.review-card figure { position: relative; margin: 10px 10px 0; }
+.review-photo { display: block; overflow: hidden; border-radius: 16px; }
+.review-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.review-card figcaption { position: absolute; inset-inline: 10px; bottom: 10px; width: fit-content; max-width: calc(100% - 20px); padding: 5px 9px; border-radius: 6px; background: var(--paper); color: var(--ink); font-size: .6875rem; line-height: 1.5; overflow-wrap: anywhere; pointer-events: none; }
+.review-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+.review-rating { display: flex; gap: 12px; align-items: center; font-size: .75rem; }
+.review-rating > span { color: #86320B; letter-spacing: 2px; }
+.review-quote { flex: 1; }
+.review-label { margin-bottom: 7px; font-size: .6875rem; }
+.review-card blockquote { margin: 0; white-space: pre-line; font-size: 1.0625rem; font-weight: 500; line-height: 1.7; overflow-wrap: anywhere; }
+.review-body h3 { font: 650 .875rem/1.6 var(--text); letter-spacing: 0; }
+.review-body h3 a { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; text-decoration: none; min-height: 30px; }
+.review-body h3 a:hover bdi { text-decoration: underline; text-underline-offset: 4px; }
+.review-google { font-size: .6875rem; font-weight: 400; direction: ltr; }
+.review-original { border-top: 1px solid #1F12352B; }
+.review-original summary { cursor: pointer; padding-block: 12px 0; min-height: 44px; font-size: .75rem; line-height: 1.6; }
+.review-original blockquote { margin-block: 18px; font-size: .9375rem; font-weight: 400; }
+.review-original p { font-size: .75rem; }
+.review-source { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; font-size: .8125rem; text-underline-offset: 5px; }
+@media (min-width: 1100px) {
+  .review-controls { display: none; }
+  .reviews { overflow: visible; }
+  .review-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 28px; }
+  .review-card article { display: grid; grid-template-columns: 44% minmax(0, 1fr); min-height: 360px; }
+  .review-card figure { margin: 10px; height: 340px; align-self: start; }
+  .review-photo { position: absolute; inset: 0; height: 100%; }
+  .review-card img { height: 100%; aspect-ratio: auto; }
+  .review-body { padding: 24px; padding-inline-start: 18px; gap: 12px; }
+}
+@media (max-width: 1099px) {
+  .review-quote { min-height: 8.3rem; }
+}
+@media (max-width: 560px) {
+  .reviews-head { align-items: start; gap: 12px; }
+  .reviews-head h3 { max-width: 13ch; }
+  .review-controls { gap: 6px; }
+  .review-controls button { width: 44px; height: 44px; }
+  .review-list { gap: 16px; }
+  .review-body { padding: 20px; }
+}
 
 /* visit */
 .visit-in { display: grid; gap: clamp(32px, 4.5vw, 64px); justify-items: start; }
@@ -180,15 +227,13 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
 .foot-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--m); align-items: start; }
 .foot-fr { max-width: 30ch; font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); }
 .foot-links { display: grid; justify-items: start; }
-.foot-credit { font-size: .9375rem; }
 
 /* entrances: content stays visible without script */
-.js :is(.rv, .scene h2, .sheet, .proof .big, .proof .lead, .f-desc, .chips, .visit .actions, .strip .pic, .wordmark, .foot-row) {
+.js :is(.rv, .scene h2, .sheet, .proof .big, .proof .lead, .f-desc, .chips, .visit .actions, .wordmark, .foot-row) {
   opacity: 0; transform: translateY(40px);
   transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 90ms);
 }
 .js .in { opacity: 1 !important; transform: none !important; }
-.js .strip .pic.in { transition: transform .6s var(--ease); transition-delay: 0s; }
 
 @media (max-width: 900px) {
   .nav { display: none; }
@@ -214,26 +259,21 @@ h3 { font-family: var(--display); font-weight: 650; font-variation-settings: "SO
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .par { transform: none; }
-  .js :is(.rv, .scene h2, .sheet, .proof .big, .proof .lead, .f-desc, .chips, .visit .actions, .strip .pic, .wordmark, .foot-row) { opacity: 1; transform: none; }
+  .js :is(.rv, .scene h2, .sheet, .proof .big, .proof .lead, .f-desc, .chips, .visit .actions, .wordmark, .foot-row) { opacity: 1; transform: none; }
 }
 
-/* Keep touch scrolling light: animate only the photo track, while visible. */
+/* Pause decorative loops outside the viewport and in background tabs. */
+.js :is(.dr, .star, .pic-a, .pic-b, .track) { animation-play-state: paused; }
+.js .motion-visible :is(.dr, .star, .pic-a, .pic-b, .track) { animation-play-state: running; }
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .motion-visible .par { will-change: transform; }
+}
+.motion-hidden :is(.dr, .star, .pic-a, .pic-b, .track), .marquee:hover .track, .marquee:focus-within .track { animation-play-state: paused !important; }
 @media (max-width: 900px), (hover: none), (pointer: coarse) {
   .par { transform: none; will-change: auto; }
-  .dr, .star { animation: none; }
-  .pic-a, .pic-b { animation: none; }
+  .dr, .star, .pic-a, .pic-b { animation: none; }
 }
-@media (prefers-reduced-motion: no-preference) {
-  @media (max-width: 900px), (hover: none), (pointer: coarse) {
-    .js .strip-in {
-      animation: strip-glide 24s ease-in-out infinite alternate;
-      animation-play-state: paused;
-    }
-    .js .strip.is-visible .strip-in { animation-play-state: running; }
-    .js .strip:focus-within .strip-in { animation-play-state: paused; }
-  }
-}
-@keyframes strip-glide {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(var(--strip-end, 0px), 0, 0); }
+@media (prefers-reduced-motion: reduce) {
+  .par { transform: none; will-change: auto; }
+  .reviews { scroll-snap-type: none; }
 }

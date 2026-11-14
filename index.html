@@ -75,7 +75,7 @@
     <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <span data-i18n="hero.rating">4.8 من 1,192 تقييم على قوقل</span></p>
   </div>
   <div class="hero-pics">
-    <img class="pic pic-a" src="assets/cups.jpg" width="512" height="640" alt="ستة أكواب خيمة الملوّنة: شاي مثلّج، كركديه، قهوة، ماتشا، شوكولاتة مثلّجة وسبانش لاتيه" data-i18n-attr="alt:alt.cups">
+    <img class="pic pic-a" fetchpriority="high" decoding="async" src="assets/cups.jpg" width="512" height="640" alt="ستة أكواب خيمة الملوّنة: شاي مثلّج، كركديه، قهوة، ماتشا، شوكولاتة مثلّجة وسبانش لاتيه" data-i18n-attr="alt:alt.cups">
     <img class="pic pic-b" src="assets/pour.jpg" width="360" height="640" alt="القهوة تنصبّ على الثلج في كوب خيمة تحت زر PUSH" data-i18n-attr="alt:alt.pour">
   </div>
 </section>
@@ -176,15 +176,116 @@
       <p class="lead" data-i18n="seen.p">4.8 من 5 على قوقل، من 1,192 تقييم. تعال شوف ليش.</p>
     </div>
   </div>
-  <div class="strip" id="strip" tabindex="0" role="group" aria-label="صور من خيمة" data-i18n-attr="aria-label:seen.strip">
-    <div class="strip-in" id="stripIn">
-      <img class="pic" src="assets/dessert-car.jpg" width="512" height="640" alt="ملعقة من خيمة سيجنتشر بالشوكولاتة والبيكان" data-i18n-attr="alt:alt.sig" loading="lazy">
-      <img class="pic" src="assets/trunk.jpg" width="512" height="640" alt="شنطة سيارة مليانة علب خيمة سيجنتشر" data-i18n-attr="alt:alt.trunk" loading="lazy">
-      <img class="pic" src="assets/dessert-hoodie.jpg" width="512" height="640" alt="علبة خيمة سيجنتشر في اليد" data-i18n-attr="alt:alt.hoodie" loading="lazy">
-      <img class="pic" src="assets/tub.jpg" width="512" height="640" alt="علبة خيمة سيجنتشر" data-i18n-attr="alt:alt.tub" loading="lazy">
-      <img class="pic" src="assets/guest.jpg" width="512" height="640" alt="ضيف يشتغل على الطاولة ومعه حلى خيمة" data-i18n-attr="alt:alt.guest" loading="lazy">
-      <img class="pic" src="assets/shop.jpg" width="360" height="640" alt="ركن المشروبات الحارة داخل خيمة بار" data-i18n-attr="alt:alt.shop" loading="lazy">
+  <div class="reviews-head">
+    <div><h3 id="reviews-heading">الكوب يحلى مع كلامكم</h3>
+    <p id="reviews-help">من ضيوف جرّبوا خيمة، بكلامهم وصورهم.</p></div>
+    <div class="review-controls" hidden>
+      <button type="button" data-review-step="-1" aria-controls="review-list" aria-label="المراجعة السابقة"><span aria-hidden="true">→</span></button>
+      <button type="button" data-review-step="1" aria-controls="review-list" aria-label="المراجعة التالية"><span aria-hidden="true">←</span></button>
     </div>
+  </div>
+  <div class="reviews" tabindex="0" role="region" aria-labelledby="reviews-heading" aria-describedby="reviews-help">
+    <ul class="review-list" id="review-list">
+      <li class="review-card">
+        <article aria-labelledby="reviewer-0">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLcr5gsyWsIA4XNOzNugn-kBwbTmD8SHLkocH4voQfHOfl6aQ9Yoxoct9lgTXpb8gS7M4oS41PAZ2ulHIjQzL8KV3_v6igbUo42A5kL25xYetBBu-bFzpvaae0cA8_UGsogQOcP8jAIX1AGS=w800" aria-label="عرض صورة من عبدالوهاب محمد">
+              <img src="assets/reviews/hibiscus-chess-640.webp" srcset="assets/reviews/hibiscus-chess-320.webp 320w, assets/reviews/hibiscus-chess-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 62%" alt="كوب كركديه خيمة على رقعة شطرنج" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">الصورة: </span><bdi>عبدالوهاب محمد</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 من 5 نجوم"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">مقتطف من المراجعة</p><blockquote lang="ar" dir="rtl">الكركديه جيد بس يبغا له يكون شوي ثقيل الماتشا لذيذه القهوه بالخوخ لذيده</blockquote></div>
+            <h3 id="reviewer-0"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%A7%D9%84%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87%20%D8%AC%D9%8A%D8%AF"><bdi>عبدالوهاب محمد</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>المراجعة كاملة ومصدر الصورة</summary>
+              <blockquote lang="ar" dir="rtl">المكان جميل خدمه حلوه الموظف مبتسم الكركديه جيد بس يبغا له يكون شوي ثقيل الماتشا لذيذه القهوه بالخوخ لذيده شكرا على المكان الحلو</blockquote>
+              <p>الصورة من <a href="https://www.google.com/maps/contrib/102477895996414169970/reviews?hl=ar"><bdi>عبدالوهاب محمد</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%A7%D9%84%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87%20%D8%AC%D9%8A%D8%AF">اقرأ على قوقل</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-1">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLeJdT8L6emMrTxXjZU4XY-Y2WXpGMnCGNQmiptyFhLPct5AwQJui5dqzvFfl5CAE1KChKvPfyHqin6AbL8PcxIYPSIzb71adyFgJGl3Er9bUZXHqggsSTZPhpBYvUaPl-E6wM5y=w800" aria-label="عرض صورة من Kayan">
+              <img src="assets/reviews/fresh-matcha-640.webp" srcset="assets/reviews/fresh-matcha-320.webp 320w, assets/reviews/fresh-matcha-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 72%" alt="كوب ماتشا بالثلج عند صنبور الماتشا" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">الصورة: </span><bdi>Kayan</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 من 5 نجوم"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">مقتطف من المراجعة</p><blockquote lang="ar" dir="rtl">الكوفي جميل وفكرته حلوه ماشاءالله
+جربت اشياء كثير عندهم و احترت بالطلب
+الماتشا موووزونه حلاها</blockquote></div>
+            <h3 id="reviewer-1"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%85%D9%88%D9%88%D9%88%D8%B2%D9%88%D9%86%D9%87"><bdi>Kayan</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>المراجعة كاملة ومصدر الصورة</summary>
+              <blockquote lang="ar" dir="rtl">الكوفي جميل وفكرته حلوه ماشاءالله
+جربت اشياء كثير عندهم و احترت بالطلب
+الماتشا موووزونه حلاها
+و الموظفه ليان اخلاقها عسل 💓</blockquote>
+              <p>الصورة من <a href="https://www.google.com/maps/contrib/106170640591829200181/reviews?hl=ar"><bdi>Kayan</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%85%D9%88%D9%88%D9%88%D8%B2%D9%88%D9%86%D9%87">اقرأ على قوقل</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-2">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLdP7ncYwgb_Mwf7GggMOLOyjiEi7fNJaovJRqqCwTkBCqdkJFipqPRt0qv1gks0mCEXTaM62Y43qHHsikhK4cpw9sTxaCvmPhl-30UtAExlfWEmaCx7mgvR-BP73ROjxgAbEp6-=w800" aria-label="عرض صورة من حسن الخنبشي">
+              <img src="assets/reviews/coffee-window-640.webp" srcset="assets/reviews/coffee-window-320.webp 320w, assets/reviews/coffee-window-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 95%" alt="قهوة مثلجة في كوب خيمة عند النافذة" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">الصورة: </span><bdi>حسن الخنبشي</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 من 5 نجوم"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">مقتطف من المراجعة</p><blockquote lang="ar" dir="rtl">الكفي جميل ورايق
+قهوة اليوم الأثيوبي ممتازة
+اسبنش لاتيه ممتاز
+الماتشا ممتازة</blockquote></div>
+            <h3 id="reviewer-2"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%82%D9%87%D9%88%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D8%A3%D8%AB%D9%8A%D9%88%D8%A8%D9%8A"><bdi>حسن الخنبشي</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>المراجعة كاملة ومصدر الصورة</summary>
+              <blockquote lang="ar" dir="rtl">الكفي جميل ورايق
+قهوة اليوم الأثيوبي ممتازة
+اسبنش لاتيه ممتاز
+الماتشا ممتازة
+شكراً لغلا بشوشة ومحترمه الله يوفقها يارب
+ويبارك لكم في مالكم وحلالكم
+
+ما اقول تتكرر الزيارة سرت عميل يومي عندكم ♥️</blockquote>
+              <p>الصورة من <a href="https://www.google.com/maps/contrib/103667330890368123505/reviews?hl=ar"><bdi>حسن الخنبشي</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D9%82%D9%87%D9%88%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D8%A3%D8%AB%D9%8A%D9%88%D8%A8%D9%8A">اقرأ على قوقل</a>
+            </details>
+          </div>
+        </article>
+      </li>
+      <li class="review-card">
+        <article aria-labelledby="reviewer-3">
+          <figure>
+            <a class="review-photo" href="https://lh3.googleusercontent.com/grass-cs/AABkmLdrhm6ujHB1UExIgBmxXi1hqrEgAkJO5QORRhRAOLPmB6aINOBO6clKl6j8Gk-6aiVoRzaWQzdaTteWTXP4o3dEdw08lXsXGWjQv4Y-zWqFSKlg824zrzD0QyxKEW9kW_TyH7fwx88e9aU=w800" aria-label="عرض صورة من Abaa Sheboun">
+              <img src="assets/reviews/cup-in-hand-640.webp" srcset="assets/reviews/cup-in-hand-320.webp 320w, assets/reviews/cup-in-hand-640.webp 640w" sizes="(min-width: 1100px) 24vw, (max-width: 560px) 86vw, 360px" width="640" height="1138" style="object-position: center 52%" alt="ضيف يحمل كوب خيمة الملوّن داخل المقهى" loading="lazy" decoding="async">
+            </a>
+            <figcaption><span class="sr">الصورة: </span><bdi>Abaa Sheboun</bdi> / Google Maps</figcaption>
+          </figure>
+          <div class="review-body">
+            <span class="review-rating" aria-label="5 من 5 نجوم"><span aria-hidden="true">★★★★★</span><bdi>5/5</bdi></span>
+            <div class="review-quote"><p class="review-label">المراجعة الأصلية</p><blockquote lang="ar" dir="rtl">تجربة رائعة و المكان جداً جميل
+الموظف كان لطيف جداً
+انصح فيه</blockquote></div>
+            <h3 id="reviewer-3"><a href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D8%B1%D8%A7%D8%A6%D8%B9%D8%A9"><bdi>Abaa Sheboun</bdi><span class="review-google">Google ↗</span></a></h3>
+            <details class="review-original"><summary>المراجعة كاملة ومصدر الصورة</summary>
+              <blockquote lang="ar" dir="rtl">تجربة رائعة و المكان جداً جميل
+الموظف كان لطيف جداً
+انصح فيه</blockquote>
+              <p>الصورة من <a href="https://www.google.com/maps/contrib/109190642419817107216/reviews?hl=ar"><bdi>Abaa Sheboun</bdi></a> / Google Maps</p>
+              <a class="review-source" href="https://www.google.com/search?q=Khyma+Bar&amp;kgmid=/g/11y8cc_nw8#lrd=0x15c3cf0001c47fc5:0x6559f674a6dd189e,1,,,,&amp;rft=%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D8%B1%D8%A7%D8%A6%D8%B9%D8%A9">اقرأ على قوقل</a>
+            </details>
+          </div>
+        </article>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -229,7 +330,6 @@
         <a href="#visit" data-i18n="nav.visit">زورونا</a>
         <a href="https://www.instagram.com/khyma.ksa/" rel="noopener" dir="ltr">@khyma.ksa</a>
       </nav>
-      <p class="foot-credit" data-i18n="foot.credit">الصور من حساب خيمة بار على انستقرام.</p>
     </div>
   </div>
 </footer>
